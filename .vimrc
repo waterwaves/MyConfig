@@ -21,7 +21,7 @@ filetype plugin indent on    " required
 
 let g:EasyMotion_keys = 'asdfghjkl;'
 
-source ~/.vim/comment_injector
+source ~/MyConfig/vimscripts/comment_injector
 nmap \\c :call InjectComment()<CR>
 
 syntax on
