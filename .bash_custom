@@ -7,7 +7,6 @@ alias ....="cd ../../.."
 alias st='git status'
 alias br='git branch'
 
-alias ls='ls -A --color=auto'
 alias l='ls -lA'
 alias grp='grep -Enr --color=auto'
 
