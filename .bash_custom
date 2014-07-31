@@ -1,0 +1,16 @@
+# .bash_custom
+
+alias ..="cd .."
+alias ...="cd ../.."
+alias ....="cd ../../.."
+
+alias st='git status'
+alias br='git branch'
+
+alias ls='ls -A --color=auto'
+alias l='ls -lA'
+alias grp='grep -Enr --color=auto'
+
+PS1='\[\e[1;32m\]\A\[\e[m\] \[\e[0;36m\]\u@\h \w\[\e[m\]$ '
+
+alias gt='. ~/MyConfig/bashscripts/quick_access'
