@@ -9,8 +9,23 @@ alias br='git branch'
 
 alias l='ls -FA'
 alias ll='ls -FlA'
-alias grp='grep -Enr --color=auto'
 
 PS1='\[\e[1;32m\]\A\[\e[m\] \[\e[0;36m\]\u@\h \w\[\e[m\]$ '
 
 alias gt='. ~/MyConfig/bashscripts/quick_access'
+
+function grp {
+  if [ -z "$1" ]; then
+    echo "No Arguments!"
+    return
+  fi
+  if [ -z "$2" ]; then
+    grep -EInr --color=auto $1 .
+  elif [[ $2 =~ [0-9]+ ]]; then
+    grep -EInr -C $2 --color=auto $1 .
+  else
+    echo "Search in $2"
+    trim=${2/%\//}
+    grep -EInr --color=auto $1 $trim
+  fi
+}
