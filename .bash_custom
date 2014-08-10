@@ -19,13 +19,34 @@ function grp {
     echo "No Arguments!"
     return
   fi
-  if [ -z "$2" ]; then
-    grep -EInr --color=auto $1 .
-  elif [[ $2 =~ [0-9]+ ]]; then
-    grep -EInr -C $2 --color=auto $1 .
-  else
-    echo "Search in $2"
-    trim=${2/%\//}
-    grep -EInr --color=auto $1 $trim
+
+  cmd="grep -EInr --color=auto"
+  term=$1
+  shift
+
+  if [ "$#" == "0" ]; then
+    $cmd "$term" .
+    return
   fi
+  
+  location="."
+
+  for arg in $@; do
+    if [[ "$arg" =~ ^-[A-Za-z]+$ ]]; then
+      cmd="$cmd $arg"
+      continue
+    fi
+    if [[ "$arg" =~ ^-[ABC][0-9]+$ ]]; then
+      cmd="$cmd ${arg:0:2} ${arg:2}"
+      continue
+    fi
+    if [[ "$arg" =~ ^-[0-9]+$ ]]; then
+      cmd="$cmd -C ${arg:1}"
+      continue
+    fi
+    location="$arg"
+    break
+  done
+  
+  $cmd "$term" $location
 }

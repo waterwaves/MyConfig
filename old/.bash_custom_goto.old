@@ -1,0 +1,179 @@
+#!/bin/bash
+
+# my customized bash script for goto (gt)
+
+# go to different repositories by the most convinient way
+
+
+case $1 in 
+a|webapp|manta-web-app)
+	echo "go to ~/manta/git_repos/manta-web-app"
+	cd ~/manta/git_repos/manta-web-app
+;;
+frontend)
+	echo "go to ~/manta/git_repos/manta-frontend"
+	cd ~/manta/git_repos/manta-frontend
+;;
+lightui)
+  echo "go to ~/WebstormProjects/untitled/light-ui"
+  cd ~/WebstormProjects/untitled/light-ui
+;;
+g)
+	echo "go to ~/Documents/Codes/waterwaves-me"
+	cd ~/Documents/Codes/waterwaves-me
+;;
+# go upward
+..)
+	if [[ "$2" =~ ^[0-9]+$  ]]
+	then
+		echo "move up $2 folder(s)"
+		num=$2
+		while [ $num -gt 0 ]
+		do
+			num=$(( $num - 1 ))
+			cd ..
+		done
+	else
+		echo "move up 1 folder"
+		cd ..
+	fi
+;;
+
+# go to a web page in $browser (Safari by default)
+-w)
+	browser="/Applications/Safari.app"
+	if [[ "$3" == "g" || "$3" == "-g" ]]
+	then
+		browser="/Applications/Google Chrome.app"
+	fi
+	if [[ "$2" == "wiki" ]]
+	then
+		open -a "$browser" "https://dev-wiki.mantamedia.com/xwiki/bin/view/Main/" &
+	elif [[ "$2" == "mail" ]]
+	then
+		open -a "$browser" "https://mail.manta.com/owa/" &
+	elif [[ "$2" == "git" ]]
+	then
+		open -a "$browser" "https://github.com/mantacode/manta-web-app" &
+	elif [[ "$2" == "fb" ]]
+	then
+		open -a "$browser" "http://www.facebook.com" &
+
+	elif [[ "$2" == "all" ]]
+	then
+		open -a "$browser" "https://mail.manta.com/owa/" &					# email
+		sleep .5
+		open -a "$browser" "https://github.com/mantacode/manta-web-app" &		# git hub
+		sleep .5
+		open -a "$browser" "https://manta4.campfirenow.com/room/556540" &		# campfire
+		sleep .5
+		open -a "$browser" "https://dev-wiki.mantamedia.com/xwiki/bin/view/Main/" & # dev-wiki
+		sleep .5
+	# go to ticket page
+	elif [[ "$2" =~ ^[0-9]{4,5}$ ]]
+	then
+		open -a "$browser" "http://trac/trac/main/ticket/$2" &
+	
+	elif [[ "$2" == "kibana" ]]
+	then
+		echo "Need to be done."
+	elif [[ "$2" == "shanhe" || "$2" == "sbx" || "$2" == "shanhe-sbx" || "$2" == "s" || "$2" == "-s" ]]
+	then
+		open -a "$browser" "http://shanhe-sbx:8889" &
+	fi
+;;
+# git commands instructions and short cuts
+-g)
+	checkout_from_remote="git checkout -b <local_name> origin/<remote_name>"
+	switch_branch="git checkout <local_name>"
+	list_of_branches="git branch"
+	list_of_remote_branches="git branch -r"
+	
+	#if [ -z "$2" ]
+	#then
+		echo ""
+		echo "    $checkout_from_remote	check out branch from remote branch to the local branch"
+		echo "    $switch_branch				switch among the local branches"
+		echo "    $list_of_branches						list all local branches for the repository"
+		echo "    $list_of_remote_branches					list all remote branches for the repository"
+		echo ""
+		echo "GoTo - shortcuts:"
+		echo "    gt co|checkout <local_name> [<remote_name>]	two names for checkout from remote branch to local branch, one name for switch branch"
+		echo "    gt br|branch [-r]				list all local (-r remote) branches"
+		echo "    gt st|status [-s]				list status of current branch"
+		echo "    gt ch|change				check and delete .idea/, and git add ."
+		echo ""
+		
+	#fi
+;;
+co|checkout)
+	if [[ -z "$2" ]]
+	then
+		echo "    gt co <local_name> [<remote_name>]		two names for checkout from remote branch to local branch, one name for switch branch"
+	else
+		echo "$2 is local name."
+		if [[ ! -z "$3" ]]
+		then
+			echo "$3 is remote name."
+			echo "git checkout -b $2 origin/$3";
+			git checkout -b "$2" origin/$3
+		else
+			echo "git checkout $2"
+			output=$({ git checkout $2 | grep '^error'; } 2>&1 )
+			if [[ "$output" =~ ^error ]]
+			then
+				read -p "There is no branch named as $2, do you want create one? (y/n) " yn
+				if [[ $yn =~ [Yy](es)? ]]
+				then
+					echo "git checkout -b $2"
+					git checkout -b "$2"
+				fi
+			fi
+		fi
+		
+	fi
+;;
+br|branch)
+	git branch ${@:2}
+;;
+st|status)
+	git status ${@:2}
+;;
+sync)
+	echo "alias srcrr."
+	node ~/manta/git_repos/srcrr-client/srcrr $@
+;;
+--edit)
+	vim ~/.bash_custom_goto
+;;
+
+*)
+# Instructions for GoTo
+	if [[ -z "$1" || "$1" == '-h' || "$1" == '--help' ]]	# if no argument, show instruction
+	then
+		header="GoTo - missing the target:"
+		if [[ "$1" == '-h' || "$1" == '--help' ]]
+		then
+			header="GoTo instructions:"
+		fi
+		echo ""
+		echo "$header"
+		echo ""
+		echo "    a | webapp | manta-web-app                     go to manta-web-app repository"
+		echo "    .. [num]                                       move up [num]/1 folder(s)"
+		echo "    -w wiki|mail|git|fb|all [[-]g]                 open web pages in Safari by default, g - chrome"
+		echo ""
+		echo "    -g                                             instructions for GIT"
+		echo "    co <local_name> [<remote_name>]                GIT checkout shortcuts"
+		echo "    br|branch [-r]                                 GIT branches look-up"
+		echo "    st|status [-s]                                 GIT status "
+		echo ""
+		echo "    sync                                           alias for 'srcrr sync'"
+		echo ""
+		echo "    --edit                                         edit this function ( not recommended )"	
+	else
+		echo "GoTo - Invalid argument! Type gt for more instructions."
+	fi
+
+esac
+
