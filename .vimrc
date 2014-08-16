@@ -38,15 +38,18 @@ au BufNewFile,BufRead *.mh set filetype=mason
 au BufNewFile,BufRead *.md set filetype=mason
 au BufNewFile,BufRead *.mhtml set filetype=mason
 
+
 colorscheme desert
+hi Search cterm=NONE ctermfg=Black ctermbg=LightCyan
 set cursorline
 hi CursorLine cterm=bold
-hi Search cterm=NONE ctermfg=Black ctermbg=LightCyan
+hi CursorLineNr cterm=bold ctermfg=Green
 
-set tabstop=2
-set shiftwidth=2
-set expandtab
-set softtabstop=2
+
+set tabstop=4
+set shiftwidth=4
+"set expandtab
+set softtabstop=4
 set nu
 set hlsearch
 set incsearch
