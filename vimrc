@@ -39,11 +39,12 @@ au BufNewFile,BufRead *.md set filetype=mason
 au BufNewFile,BufRead *.mhtml set filetype=mason
 
 
-colorscheme desert
-hi Search cterm=NONE ctermfg=Black ctermbg=LightCyan
+" colorscheme flatcolor
+source ~/MyConfig/vimscripts/colors/flatcolor.vim
 set cursorline
-hi CursorLine cterm=bold
-hi CursorLineNr cterm=bold ctermfg=Green
+hi CursorLine cterm=bold ctermbg=0
+hi CursorLineNr cterm=bold ctermfg=White
+
 
 
 set tabstop=4
