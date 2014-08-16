@@ -19,10 +19,14 @@ Plugin 'EasyMotion'
 call vundle#end()            " required
 filetype plugin indent on    " required
 
-let g:EasyMotion_keys = 'asdfghjkl;'
+let g:EasyMotion_keys = 'asdfghjkleiwro'
 
+" Auto insert console log/data dumper
 source ~/MyConfig/vimscripts/comment_injector
 nmap \\c :call InjectComment()<CR>
+
+" Key Mappings
+
 
 syntax on
 filetype on
@@ -36,7 +40,8 @@ au BufNewFile,BufRead *.mhtml set filetype=mason
 
 colorscheme desert
 set cursorline
-hi CursorLine term=bold cterm=bold guibg=Grey40
+hi CursorLine cterm=bold
+hi Search cterm=NONE ctermfg=Black ctermbg=LightCyan
 
 set tabstop=2
 set shiftwidth=2
