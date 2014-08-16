@@ -21,9 +21,6 @@ filetype plugin indent on    " required
 
 let g:EasyMotion_keys = 'asdfghjkleiwro'
 
-" Auto insert console log/data dumper
-source ~/MyConfig/vimscripts/comment_injector
-nmap \\c :call InjectComment()<CR>
 
 " Key Mappings
 
@@ -46,12 +43,19 @@ hi CursorLine cterm=bold ctermbg=0
 hi CursorLineNr cterm=bold ctermfg=White
 
 
-
 set tabstop=4
 set shiftwidth=4
 "set expandtab
 set softtabstop=4
 set nu
-set hlsearch
 set incsearch
+set hlsearch
 set smartindent
+
+
+" Auto insert console log/data dumper
+source ~/MyConfig/vimscripts/debug_injector.vim
+noremap <C-A>d :call InsertDebug()<CR>
+" Auto highlight current word and search in the page
+" Ctrl-a a
+source ~/MyConfig/vimscripts/autohighlight.vim

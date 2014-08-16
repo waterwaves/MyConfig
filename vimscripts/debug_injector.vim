@@ -1,4 +1,4 @@
-function! InjectComment()
+function! InsertDebug()
     echo &ft
     if (&ft=='javascript')
       normal aconsole.log();
@@ -10,3 +10,4 @@ function! InjectComment()
       startinsert
     endif
 endfunction
+

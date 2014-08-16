@@ -210,7 +210,7 @@ call s:Highlight('SpecialComment',  s:emerald, '', 'bold', '')
 call s:Highlight('Todo',            s:emerald, '', 'bold', '')
 
 call s:Highlight('String',          s:gold, '', '', '') 
-call s:Highlight('SpecialKey',      s:darkgreys[4], '', 'bold', '')
+call s:Highlight('SpecialKey',      s:cerise, '', 'bold', '')
 call s:Highlight('Special',         s:peterriver, '', 'bold', '')
 call s:Highlight('SpecialChar',     s:peterriver, '', 'bold', '')
 
