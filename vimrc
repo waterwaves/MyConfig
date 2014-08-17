@@ -59,3 +59,4 @@ noremap <C-A>d :call InsertDebug()<CR>
 " Auto highlight current word and search in the page
 " Ctrl-a a
 source ~/MyConfig/vimscripts/autohighlight.vim
+

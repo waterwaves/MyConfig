@@ -245,7 +245,7 @@ call s:Highlight('Cursor',          s:darkgreys[3], s:white, '', '')
 call s:Highlight('vCursor',         s:darkgreys[3], s:white, '', '')
 call s:Highlight('iCursor',         s:darkgreys[3], s:white, '', '')
 
-call s:Highlight('StatusLine',      s:white, s:black, 'bold', '')
+call s:Highlight('StatusLine',      s:white, s:darkgreys[5], 'bold', '')
 call s:Highlight('StatusLineNC',    s:greys[1], s:darkgreys[3], 'bold', '')
 call s:Highlight('VertSplit',       s:greys[1], s:darkgreys[3], 'bold', '')
 
