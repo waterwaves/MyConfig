@@ -4,7 +4,7 @@ alias ..="cd .."
 alias ...="cd ../.."
 alias ....="cd ../../.."
 
-alias st='git status'
+alias st='git status -s -b'
 alias br='git branch'
 
 alias la='ls -FA'
