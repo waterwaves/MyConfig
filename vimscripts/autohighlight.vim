@@ -1,7 +1,7 @@
 " Highlight all instances of word under cursor, when idle.
 " Useful when studying strange source code.
 " Type z/ to toggle highlighting on/off.
-nnoremap <C-A>a :if AutoHighlightToggle()<Bar>set hls<Bar>endif<CR>
+nnoremap <C-[>a :if AutoHighlightToggle()<Bar>set hls<Bar>endif<CR>
 
 function! AutoHighlightToggle()
   let @/ = ''
@@ -16,7 +16,7 @@ function! AutoHighlightToggle()
       au!
       au CursorHold * let @/ = '\V\<'.escape(expand('<cword>'), '\').'\>'
     augroup end
-    setl updatetime=100
+    setl updatetime=200
     echo 'Highlight current word: ON'
 	set hls
     return 1

@@ -55,8 +55,8 @@ set smartindent
 
 " Auto insert console log/data dumper
 source ~/MyConfig/vimscripts/debug_injector.vim
-noremap <C-A>d :call InsertDebug()<CR>
+noremap <C-[>d :call InsertDebug()<CR>
 " Auto highlight current word and search in the page
-" Ctrl-a a
+" Ctrl-[ a
 source ~/MyConfig/vimscripts/autohighlight.vim
 
