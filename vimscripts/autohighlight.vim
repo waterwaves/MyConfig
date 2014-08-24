@@ -1,7 +1,7 @@
 " Highlight all instances of word under cursor, when idle.
 " Useful when studying strange source code.
 " Type z/ to toggle highlighting on/off.
-nnoremap <C-[>a :if AutoHighlightToggle()<Bar>set hls<Bar>endif<CR>
+nnoremap \\a :if AutoHighlightToggle()<Bar>set hls<Bar>endif<CR>
 
 function! AutoHighlightToggle()
   let @/ = ''
