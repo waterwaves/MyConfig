@@ -15,6 +15,12 @@ Plugin 'mattn/emmet-vim'
 Plugin 'ctrlp.vim'
 Plugin 'fugitive.vim'
 Plugin 'EasyMotion'
+Plugin 'pangloss/vim-javascript'
+Plugin 'tpope/vim-surround'
+Plugin 'tpope/vim-markdown'
+Plugin 'bling/vim-airline'
+Plugin 'scrooloose/nerdcommenter'
+
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -37,7 +43,7 @@ au BufNewFile,BufRead *.mhtml set filetype=mason
 
 
 " colorscheme flatcolor
-source ~/MyConfig/vimscripts/colors/flatcolor.vim
+" source ~/MyConfig/vimscripts/colors/flatcolor.vim
 set cursorline
 hi CursorLine cterm=bold ctermbg=0
 hi CursorLineNr cterm=bold ctermfg=White
@@ -51,11 +57,12 @@ set nu
 set incsearch
 set hlsearch
 set smartindent
+set laststatus=2
 
 
 " Auto insert console log/data dumper
 source ~/MyConfig/vimscripts/debug_injector.vim
-noremap \\d :call InsertDebug()<CR>
+noremap ∂ :call InsertDebug()<CR>
 " Auto highlight current word and search in the page
 " Ctrl-[ a
 source ~/MyConfig/vimscripts/autohighlight.vim
