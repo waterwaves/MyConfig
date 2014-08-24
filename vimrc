@@ -40,7 +40,8 @@ autocmd BufEnter *.mhtml :syntax sync fromstart
 au BufNewFile,BufRead *.mh set filetype=mason
 au BufNewFile,BufRead *.md set filetype=mason
 au BufNewFile,BufRead *.mhtml set filetype=mason
-
+" Force markdown syntax highlighting to work
+autocmd BufNewFile,BufReadPost *.md set filetype=markdown
 
 " colorscheme flatcolor
 " source ~/MyConfig/vimscripts/colors/flatcolor.vim
