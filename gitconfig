@@ -1,8 +1,5 @@
 [color]
 	ui = true
-[user]
-	name = Shan He
-	email = shanhe@shutterstock.com
 [diff]
 	algorithm = patience
 [rerere]
