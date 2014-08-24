@@ -43,10 +43,10 @@ hi CursorLine cterm=bold ctermbg=0
 hi CursorLineNr cterm=bold ctermfg=White
 
 
-set tabstop=4
-set shiftwidth=4
-"set expandtab
-set softtabstop=4
+set tabstop=2
+set shiftwidth=2
+set expandtab
+set softtabstop=2
 set nu
 set incsearch
 set hlsearch
@@ -55,7 +55,7 @@ set smartindent
 
 " Auto insert console log/data dumper
 source ~/MyConfig/vimscripts/debug_injector.vim
-noremap <C-[>d :call InsertDebug()<CR>
+noremap \\d :call InsertDebug()<CR>
 " Auto highlight current word and search in the page
 " Ctrl-[ a
 source ~/MyConfig/vimscripts/autohighlight.vim
