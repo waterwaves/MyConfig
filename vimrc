@@ -43,7 +43,7 @@ au BufNewFile,BufRead *.mhtml set filetype=mason
 " Force markdown syntax highlighting to work
 autocmd BufNewFile,BufReadPost *.md set filetype=markdown
 
-" colorscheme flatcolor
+colorscheme desert
 " source ~/MyConfig/vimscripts/colors/flatcolor.vim
 set cursorline
 hi CursorLine cterm=bold ctermbg=0
@@ -61,7 +61,7 @@ set smartindent
 set laststatus=2
 
 
-" Auto insert console log/data dumper
+" Auto insert console log/data dumper - <Alt+d>
 source ~/MyConfig/vimscripts/debug_injector.vim
 noremap ∂ :call InsertDebug()<CR>
 " Auto highlight current word and search in the page
