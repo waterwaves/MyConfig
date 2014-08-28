@@ -48,6 +48,7 @@ colorscheme desert
 " source ~/MyConfig/vimscripts/colors/flatcolor.vim
 set cursorline
 hi CursorLine cterm=bold ctermbg=0
+hi Search cterm=none ctermfg=Black
 hi CursorLineNr cterm=bold ctermfg=White
 
 

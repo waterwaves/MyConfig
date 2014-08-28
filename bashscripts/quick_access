@@ -1,16 +1,14 @@
 #!/bin/bash
 
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
-KEYWORD=$1
-#OPTION=$2
+K=$1
+msg=$(perl $DIR/workspace.pl --keyword=$K)
 
-msg=$(node $DIR/workspace.js --path=~/code/shutterstock --keyword=$KEYWORD)
-echo "$msg"
-if [ "$(echo -e "$msg" | grep -E '^Here are')" ]
+if [ "$(echo -e "$msg" | grep -E '^1\. ')" ]
 then
-  printf "\nType the number to get there: "
+  echo "$msg"
   read OPTION
-  msg2=$(node $DIR/workspace.js --path=~/code/shutterstock --keyword=$KEYWORD --option=$OPTION)
+  msg2=$(perl $DIR/workspace.pl --keyword=$K --option=$OPTION) 
   if [ "$(echo -e "$msg2" | grep -E '^\/')" ]
   then
     cd $msg2
@@ -23,3 +21,4 @@ if [ "$(echo -e "$msg" | grep -E '^\/')" ]
 then
   cd $msg
 fi
+
