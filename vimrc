@@ -47,8 +47,8 @@ au BufNewFile,BufRead *.mhtml set filetype=mason
 colorscheme desert
 " source ~/MyConfig/vimscripts/colors/flatcolor.vim
 set cursorline
-hi CursorLine cterm=bold ctermbg=0
-hi Search cterm=none ctermfg=Black
+hi CursorLine cterm=bold ctermbg=None
+hi Search cterm=none ctermfg=White
 hi CursorLineNr cterm=bold ctermfg=White
 
 
