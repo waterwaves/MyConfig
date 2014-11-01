@@ -21,7 +21,6 @@ Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-markdown'
 Plugin 'bling/vim-airline'
 Plugin 'scrooloose/nerdcommenter'
-Plugin 'https://github.com/altercation/vim-colors-solarized.git'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -36,14 +35,14 @@ let g:EasyMotion_keys = 'asdfghjkleiwro'
 syntax on
 filetype on
 " For mason syntax.
-autocmd BufEnter *.mh :syntax sync fromstart
-autocmd BufEnter *.md :syntax sync fromstart
-autocmd BufEnter *.mhtml :syntax sync fromstart
+"autocmd BufEnter *.mh :syntax sync fromstart
+"autocmd BufEnter *.md :syntax sync fromstart
+"autocmd BufEnter *.mhtml :syntax sync fromstart
 au BufNewFile,BufRead *.mh set filetype=mason
 au BufNewFile,BufRead *.md set filetype=mason
 au BufNewFile,BufRead *.mhtml set filetype=mason
 " Force markdown syntax highlighting to work
-"autocmd BufNewFile,BufReadPost *.md set filetype=markdown
+" autocmd BufNewFile,BufReadPost *.md set filetype=markdown
 
 colorscheme desert
 " source ~/MyConfig/vimscripts/colors/flatcolor.vim
