@@ -16,7 +16,13 @@ Vundle Github Link: https://github.com/gmarik/Vundle.vim
 git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 ```
 
-#### Step 2: Copy .vimrc to home directory
+#### Step 2: Add vim source `vimrc` to .vimrc in the home directory
 ```bash
-cp ~/MyConfig/.vimrc ~
+source ~/MyConfig/vimrc
+```
+#### Step 3: Add `bashscripts source` to .bash_profile in the home directory
+```bash
+if [ -f ~/MyConfig/.bash_custom ]; then                                                  
+  . ~/MyConfig/.bash_custom
+fi
 ```
