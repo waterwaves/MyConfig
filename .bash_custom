@@ -3,12 +3,14 @@
 alias ..="cd .."
 alias ...="cd ../.."
 alias ....="cd ../../.."
+alias .....="cd ../../../.."
 
 alias st='git status -s -b'
 alias br='git branch'
 
 alias la='ls -FA'
 alias ll='ls -lFA'
+alias less='less -R'
 
 # PS1='\[\e[1;32m\]\A\[\e[m\] \[\e[0;36m\]\u@\h \w\[\e[m\]$ '
 export PS1="\[\033[36m\]\u\[\033[m\]@\[\033[32m\]\h:\[\033[33;1m\]\w\[\033[m\]\$ "
@@ -21,7 +23,7 @@ function grp {
     return
   fi
 
-  cmd="grep -EInr --color=auto"
+  cmd="grep -EInr --color=always"
   term=$1
   shift
 
