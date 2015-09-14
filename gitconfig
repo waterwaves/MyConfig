@@ -17,3 +17,6 @@
 	diffm = diff --stat=120,120 -p origin/master...
 	l = log --oneline --graph --decorate
 	g = grep -En
+[user]
+	name = Shan He
+	email = shanhe@shutterstock.com
