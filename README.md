@@ -26,3 +26,8 @@ if [ -f ~/MyConfig/.bash_custom ]; then
   . ~/MyConfig/.bash_custom
 fi
 ```
+
+#### Step 3: Install the_silver_searcher
+```bash
+brew install the_silver_search
+```

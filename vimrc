@@ -12,15 +12,17 @@ Plugin 'gmarik/Vundle.vim'
 
 
 Plugin 'mattn/emmet-vim'
-Plugin 'ctrlp.vim'
-Plugin 'fugitive.vim'
-Plugin 'EasyMotion'
+Plugin 'kien/ctrlp.vim'
+Plugin 'tpope/vim-fugitive'
+Plugin 'easymotion/vim-easymotion'
 Plugin 'pangloss/vim-javascript'
 Plugin 'digitaltoad/vim-jade'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-markdown'
 Plugin 'bling/vim-airline'
 Plugin 'scrooloose/nerdcommenter'
+Plugin 'scrooloose/nerdtree'
+Plugin 'fatih/vim-go'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -44,10 +46,11 @@ au BufNewFile,BufRead *.mhtml set filetype=mason
 " Force markdown syntax highlighting to work
 " autocmd BufNewFile,BufReadPost *.md set filetype=markdown
 
-colorscheme desert
+colorscheme slate
+
 " source ~/MyConfig/vimscripts/colors/flatcolor.vim
 set cursorline
-hi CursorLine cterm=bold ctermbg=None
+hi CursorLine cterm=bold ctermbg=None guibg=NONE
 hi Search cterm=none ctermfg=White
 hi CursorLineNr cterm=bold ctermfg=White
 

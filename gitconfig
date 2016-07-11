@@ -8,15 +8,18 @@
 	default = current
 [core]
 	editor = vim
-[alias]
-	co = checkout
-	br = branch
-	st = status
-	sb = status -s -b
-	logs = log --stat=120,120 -p
-	diffm = diff --stat=120,120 -p origin/master...
-	l = log --oneline --graph --decorate
-	g = grep -En
 [user]
 	name = Shan He
 	email = shanhe@shutterstock.com
+[alias]
+  co = checkout
+  br = branch
+  st = status
+  sb = status -s -b
+  logs = log --stat=120,120 -p
+  diffm = diff --stat=120,120 -p origin/master...
+  l = log --oneline --graph --decorate
+  g = grep -En
+  ci = commit -v
+  ap = add -p
+  rebase2 = rebase HEAD~2 -i

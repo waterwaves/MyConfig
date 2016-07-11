@@ -17,39 +17,3 @@ export PS1="\[\033[36m\]\u\[\033[m\]@\[\033[32m\]\h:\[\033[33;1m\]\w\[\033[m\]\$
 
 alias gt='. ~/MyConfig/bashscripts/quick_access'
 
-function grp {
-  if [ -z "$1" ]; then
-    echo "No Arguments!"
-    return
-  fi
-
-  cmd="grep -EInr --color=always"
-  term=$1
-  shift
-
-  if [ "$#" == "0" ]; then
-    $cmd "$term" .
-    return
-  fi
-  
-  location="."
-
-  for arg in $@; do
-    if [[ "$arg" =~ ^-[A-Za-z]+$ ]]; then
-      cmd="$cmd $arg"
-      continue
-    fi
-    if [[ "$arg" =~ ^-[ABC][0-9]+$ ]]; then
-      cmd="$cmd ${arg:0:2} ${arg:2}"
-      continue
-    fi
-    if [[ "$arg" =~ ^-[0-9]+$ ]]; then
-      cmd="$cmd -C ${arg:1}"
-      continue
-    fi
-    location="$arg"
-    break
-  done
-  
-  $cmd "$term" $location
-}
