@@ -8,6 +8,7 @@
 	default = current
 [core]
 	editor = vim
+  excludesfile = ~/MyConfig/gitignore
 [user]
 	name = Shan He
 	email = shanhe@shutterstock.com
@@ -23,3 +24,4 @@
   ci = commit -v
   ap = add -p
   rebase2 = rebase HEAD~2 -i
+  fixup = commit -am 'fixup'
