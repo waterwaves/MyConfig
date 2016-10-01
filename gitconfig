@@ -9,9 +9,6 @@
 [core]
 	editor = vim
   excludesfile = ~/MyConfig/gitignore
-[user]
-	name = Shan He
-	email = shanhe@shutterstock.com
 [alias]
   co = checkout
   br = branch
