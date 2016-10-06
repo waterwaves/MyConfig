@@ -1,13 +1,14 @@
 [color]
-	ui = true
+  ui = true
 [diff]
-	algorithm = patience
+  algorithm = patience
+  compactionHeuristic = true
 [rerere]
-	enabled = true
+  enabled = true
 [push]
-	default = current
+  default = current
 [core]
-	editor = vim
+  editor = vim
   excludesfile = ~/MyConfig/gitignore
 [alias]
   co = checkout
