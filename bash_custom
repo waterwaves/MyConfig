@@ -1,4 +1,4 @@
-# .bash_custom
+# bash_custom
 
 alias ..="cd .."
 alias ...="cd ../.."
@@ -14,6 +14,9 @@ alias less='less -R'
 
 # PS1='\[\e[1;32m\]\A\[\e[m\] \[\e[0;36m\]\u@\h \w\[\e[m\]$ '
 export PS1="\[\033[36m\]\u\[\033[m\]@\[\033[32m\]\h:\[\033[33;1m\]\w\[\033[m\]\$ "
+export CLICOLOR=1
+
+export LSCOLORS=ExFxCxDxBxegedabagaced
 
 alias gt='. ~/MyConfig/bashscripts/quick_access'
 
