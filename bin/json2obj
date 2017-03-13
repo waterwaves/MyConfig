@@ -1,0 +1,5 @@
+#!/bin/sh
+':' //; exec "$(command -v nodejs || command -v node)" "$0" "$@"
+
+const data = process.argv[2] || require('child_process').execSync('pbpaste');
+process.stdout.write(require('util').inspect(JSON.parse(data), { depth: null }));
