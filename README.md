@@ -22,10 +22,10 @@ source ~/MyConfig/vimrc
 ```
 
 # Shortcuts
-#### Add `bashscripts` to `~/.bash_profile`
+#### Add `bashscripts` to `~/bash_profile`
 ```bash
-if [ -f ~/MyConfig/.bash_custom ]; then
-  . ~/MyConfig/.bash_custom
+if [ -f ~/MyConfig/bash_custom ]; then
+  . ~/MyConfig/bash_custom
 fi
 ```
 
@@ -41,5 +41,5 @@ fi
 # Convenient tools
 #### Step 4: Install the_silver_searcher
 ```bash
-brew install the_silver_search
+brew install the_silver_searcher
 ```
