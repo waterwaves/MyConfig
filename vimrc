@@ -1,6 +1,8 @@
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
+set backspace=indent,eol,start
+
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
@@ -16,10 +18,9 @@ Plugin 'kien/ctrlp.vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'easymotion/vim-easymotion'
 Plugin 'pangloss/vim-javascript'
-Plugin 'digitaltoad/vim-jade'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-markdown'
-"Plugin 'bling/vim-airline'
+Plugin 'bling/vim-airline'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'scrooloose/nerdtree'
 Plugin 'fatih/vim-go'
@@ -36,15 +37,6 @@ let g:EasyMotion_keys = 'asdfghjkleiwro'
 
 syntax on
 filetype on
-" For mason syntax.
-"autocmd BufEnter *.mh :syntax sync fromstart
-"autocmd BufEnter *.md :syntax sync fromstart
-"autocmd BufEnter *.mhtml :syntax sync fromstart
-au BufNewFile,BufRead *.mh set filetype=mason
-au BufNewFile,BufRead *.md set filetype=mason
-au BufNewFile,BufRead *.mhtml set filetype=mason
-" Force markdown syntax highlighting to work
-" autocmd BufNewFile,BufReadPost *.md set filetype=markdown
 
 colorscheme slate
 
