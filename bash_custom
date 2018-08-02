@@ -11,6 +11,7 @@ alias br='git branch'
 alias la='ls -FA'
 alias ll='ls -lFA'
 alias less='less -R'
+alias reset_dns="sudo killall -HUP mDNSResponder"
 
 # get current branch in git repo
 function parse_git_branch() {
@@ -59,8 +60,8 @@ function parse_git_dirty {
 	fi
 }
 
-#export PS1="\[\e[35m\]\t\[\e[m\] \[\e[36m\]\u\[\e[m\]@\[\e[32m\]\h\[\e[m\]:\[\e[33m\]\w\[\e[m\] \`parse_git_branch\`\n\\$ "
-export PS1="\[\e[35m\]\t\[\e[m\] \[\e[36m\]\u\[\e[m\]@\[\e[32m\]\h\[\e[m\]:\[\e[33m\]\w\[\e[m\] \\$ "
+export PS1="\[\e[35m\]\t\[\e[m\] \[\e[36m\]\u\[\e[m\]@\[\e[32m\]\h\[\e[m\]:\[\e[33m\]\w\[\e[m\] \`parse_git_branch\`\n\\$ "
+#export PS1="\[\e[35m\]\t\[\e[m\] \[\e[36m\]\u\[\e[m\]@\[\e[32m\]\h\[\e[m\]:\[\e[33m\]\w\[\e[m\] \\$ "
 
 export CLICOLOR=1
 
