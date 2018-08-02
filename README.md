@@ -39,7 +39,13 @@ fi
 ```
 
 # Convenient tools
-#### Step 4: Install the_silver_searcher
+#### Install the_silver_searcher
 ```bash
 brew install the_silver_searcher
+```
+
+#### Install Git Bash Autocomplete
+Reference: [github link](https://github.com/bobthecow/git-flow-completion/wiki/Install-Bash-git-completion)
+```bash
+brew install git bash-completion
 ```
