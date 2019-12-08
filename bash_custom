@@ -12,6 +12,10 @@ alias la='ls -FA'
 alias ll='ls -lFA'
 alias less='less -R'
 alias reset_dns="sudo killall -HUP mDNSResponder"
+alias all_st="find . -type d -depth 1 -exec sh -c '(echo {} && cd {} && git status -s -b && echo)' \;"
+alias all_diff="find . -type d -depth 1 -exec sh -c '(echo {} && cd {} && git diff && echo)' \;"
+
+[ -f /usr/local/etc/bash_completion ] && . /usr/local/etc/bash_completion
 
 # get current branch in git repo
 function parse_git_branch() {

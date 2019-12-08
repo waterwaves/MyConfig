@@ -16,7 +16,7 @@
   st = status
   sb = status -s -b
   logs = log --stat=120,120 -p
-  diffm = diff --stat=120,120 -p origin/master...
+  diffm = diff --stat=120,120 -p origin/mainline...
   l = log --oneline --graph --decorate
   g = grep -En
   ci = commit -v

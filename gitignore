@@ -4,3 +4,5 @@
 *.swm
 .vscode
 .idea
+.DS_Store
+*.iml
